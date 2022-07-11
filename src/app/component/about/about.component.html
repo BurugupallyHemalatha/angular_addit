@@ -1,0 +1,79 @@
+<h1>Property binding</h1>
+<ul>
+    <li>attributes and propeties are not same</li>
+    <li>attributes are defined by html </li>
+    <li>properties are difend by DOM </li>
+    <li>attributes initilize DOm properties and they are done</li>
+    <li>attribute value cannot change one they are initilized</li>
+    <li>property value hover can change</li>
+</ul>
+
+<input [id]="courseId" type="text" [disabled]="true" value="property binding"><br><br>
+<input [disabled]="isDisabled" id="{{courseId}}" type="text" value="property binding with static data"><br><br>
+<input id={{courseId}} bind-disabled="isDisabled" type="text" value="property binding"><br><br>
+
+
+<p>what we provide in html that does not change we it as attribute,when we change in the input box that is an dom value.so dom value will chage but attribute value never gonna change once we initialized it remains same</p>
+<h6>we can bind with interpolation also but interpolation does not allow to use boolean value it means \n if we give disabled in input box by default it is an truthy so its disabled when we provide false value also it wont accept </h6>
+<p>[disabled]="false" this is property binding when we give this it enables thats y we use property bindindg</p>
+<p>{{urlsite}}</p>
+<h1>Class binding </h1>
+<p>we can bind classes in 4 ways </p>
+<p class="cls">this is 2nd way for class binding</p>
+<p [class]="val">3rd way of class binding with static providing</p>
+<p [class.Textcolor]="requiredd">4rth way of binding and this is conditional binding </p>
+<p [ngClass]="Group">5th way of binding is ngClass which is group binding means if you want to bind multiple classes then we need to this </p>
+<h1>Style Binding</h1>
+<p>there are 4 ways of style binding they are </p>
+<p [style.color]="'blue'">this 1st way of style binding inthis we are providing direct property so it should be in the single qoutets</p>
+<p [style.color]="myStyle">2nd way of style binding using static data</p>
+<p [style.color]="myCondition? 'purple' :'yellow'">3rd way binding using condition</p>
+<p [ngStyle]="myStyles">4rth way of style binding want to bind multiple styles at a time then we use this ngStyle</p>
+<h1>Event binding</h1>
+<p>property binding means we send data from class to view,EVENT binding means when we send data from view to class that is known as event binding</p>
+<button (click)="onClick()" type="button">Click me</button> {{greeting}}
+<h1> Template ref. variable</h1>
+<input #msg type="text">
+<button (click)="message(msg.value)" type="button">Add mom</button>
+<h1>TWO way binding</h1>
+<input [(ngModel)]=data type="text">
+<button type="button">Touch me</button>
+<br><br> {{data}}
+<h1>ngIf</h1>
+<p *ngIf="status; then elseif else elseBlock"> this is ngif</p>
+
+<ng-template #elseif>
+    this is else if
+</ng-template>
+
+<ng-template #elseBlock>
+    <p>this is else block</p>
+</ng-template>
+<h1>ngSwitch</h1>
+<div [ngSwitch]="myChoice">
+    <div class="switchCase">
+        <div *ngSwitchCase="'one'">first block</div>
+        <div *ngSwitchCase="'two'">second block</div>
+        <div *ngSwitchCase="'three'">third block</div>
+        <div *ngSwitchDefault>this is invalid choice</div>
+    </div>
+</div>
+<h1>ngFor</h1>
+<div *ngFor="let x of subjects; index as i; first as f;last as l;even as e;odd as o">
+    <p>{{i}}----->{{x}}------>{{f}}------>{{l}}----->{{e}} ---->{{o}}</p>
+
+</div>
+<h1>Component interaction</h1>
+<p>@Input decorator By using this we can send data from parent component to child component </p>
+<p>{{fromParent}}</p>
+<p>@Output decorator using this we can send data from child component to parent compinent</p>
+<button> click it for child to parent</button>
+
+<h1>Pipes</h1>
+<p>pipes are used to transform the incoming the stream of data into required formate before displaying inthe view</p>
+<p>{{_name}}</p>
+<p> it converted to lowercase {{_name | lowercase}}</p>
+<p> it converted to uppercase {{_name | uppercase}}</p>
+<p> it converted to titlecase {{_msg | titlecase}}</p>
+<p>slice {{_name | slice:3:5}}</p>
+<p>{{_person |json }}</p>

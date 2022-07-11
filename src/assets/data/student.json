@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "vijay", "course": "Angular" },
+    { "id": 2, "name": "sai krishna", "course": "Reactjs" },
+    { "id": 3, "name": "sri krishna", "course": "Reactjs" },
+    { "id": 4, "name": "Rajitha", "course": "Reactjs" },
+    { "id": 5, "name": "Hema", "course": "Angular & Reactjs" },
+    { "id": 6, "name": "Anusha", "course": "Reactjs" }
+]
